@@ -88,7 +88,7 @@ int print_decimal(va_list args)
 		{
 			digit = number / exponent;
 			_putchar(digit + '0');
-			number = number - (digit * exp);
+			number = number - (digit * exponent);
 			exponent = exponent / 10;
 			s++;
 		}
