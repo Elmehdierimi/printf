@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * printing_intigers - function that prints intigers
+ * print_i - function that prints intigers
  * @args: arguments
  * Return: number of printed char
  */
 
-int printing_intigers(va_list args)
-int _strlen(char *str){
+int print_i(va_list args)
+{
 	int r = va_arg(args, int);
 	int lastdigit = r % 10;
 	int exponent = 1;
@@ -51,13 +51,13 @@ int _strlen(char *str){
 #include "main.h"
 
 /**
- * print_decimal - function that prints decimal
+ * print_d - function that prints decimal
  * @args: argument
  * Return: number of char printed
  */
 
-int print_decimal(va_list args)
-{
+int print_d(va_list args)
+printing_intigers.c{
 	int r = va_arg(args, int);
 	int lastdigit = r % 10;
 	int exponent = 1;

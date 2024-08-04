@@ -7,23 +7,23 @@
 
 int print_s(va_list val)
 {
-	char *str;
-	int index, length;
+	char *s;
+	int i, len;
 
 	str = va_arg(val, char *);
-	if (str == NULL)
+	if (s == NULL)
 	{
-		str = "(null)";
-		length = _strlen(str);
-		for (index = 0; index < length; index++)
-			_putchar(str[index]);
-		return (length);
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
 	else
 	{
-		length = _strlen(str);
-		for (index = 0; index < length; index++)
-			_putchar(str[index]);
-		return (length);
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
 }

@@ -22,12 +22,12 @@ typedef struct format
 	int (*function)(va_list);
 } convert;
 
-int print_decimal(va_list args);
+int print_d(va_list args);
 int print_c(va_list val);
 int print_37(void);
 int print_s(va_list val);
 int _putchar(char c);
-int printing_intigers(va_list args);
+int print_i(va_list args);
 int _strlen(char *str);
 int _strlenc(const char *str);
 int print_bin(va_list val);
