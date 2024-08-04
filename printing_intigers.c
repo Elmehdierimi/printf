@@ -57,7 +57,7 @@ int print_i(va_list args)
  */
 
 int print_d(va_list args)
-printing_intigers.c{
+print_i.c{
 	int r = va_arg(args, int);
 	int lastdigit = r % 10;
 	int exponent = 1;
