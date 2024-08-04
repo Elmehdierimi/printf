@@ -3,7 +3,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-
+/**
+ * _printf - produces output according to a format
+ * @format: format string
+ *
+ * Return: number of characters printed (excluding null byte)
+ */
 int _printf(const char *format, ...)
 int _putchar(char c);
 int _printf(const char *format, ...);

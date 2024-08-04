@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	int char_count = 0;
 	va_list arg_list;
 	int index = 0;
+
 	va_start(arg_list, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
