@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int _printf(const char *format, ...)
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list val);
