@@ -31,5 +31,9 @@ int printing_intigers(va_list args);
 int _strlen(char *str);
 int _strlenc(const char *str);
 int print_bin(va_list val);
-
+int print_oct(va_list val);
+int print_pointer(va_list val);
+int print_hex_extra(unsigned long int num);
+int print_hex(va_list val);
+int _printf(const char *format, ...);
 #endif /* MAIN_H */
