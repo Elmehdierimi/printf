@@ -1,36 +1,46 @@
 #include "main.h"
-
 /**
- * _printf - produces output according to a format
- * @format: format string
- * Return: number of characters printed (excluding null byte)
+ * _printf - is a function that selects the correct function to print.
+ * @format: identifier to look for.
+ * Return: the length of the string.
  */
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 {
-	int char_count = 0;
-	va_list arg_list;
-	int index = 0;
+	convert p[] = {
+		{"%s", print_s}, {"%c", print_c},
+		{"%%", print_37},
+		{"%i", print_i}, {"%d", print_d}, {"%r", print_revs},
+		{"%R", print_rot13}, {"%b", print_bin},
+		{"%u", print_unsigned},
+		{"%o", print_oct}, {"%x", print_hex}, {"%X", print_HEX},
+		{"%S", print_exc_string}, {"%p", print_pointer}
+	};
 
-	va_start(arg_list, format);
+	va_list args;
+	int i = 0, j, length = 0;
 
-	if (!format || (format[0] == '%' && !format[1]))
+	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	while (format && format[index])
+Here:
+	while (format[i] != '\0')
 	{
-		if (format[index] == '%' && format[index + 1])
+		j = 13;
+		while (j >= 0)
 		{
-			index++;
-			char_count += handle_format(format[index], arg_list);
+			if (p[j].ph[0] == format[i] && p[j].ph[1] == format[i + 1])
+			{
+				length += p[j].function(args);
+				i = i + 2;
+				goto Here;
+			}
+			j--;
 		}
-		else
-		{
-			_putchar(format[index]);
-			char_count++;
-		}
-		index++;
+		_putchar(format[i]);
+		length++;
+		i++;
 	}
-	va_end(arg_list);
-
-	return (char_count);
+	va_end(args);
+	return (length);
 }

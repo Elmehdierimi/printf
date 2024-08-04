@@ -7,7 +7,7 @@
  */
 
 int printing_intigers(va_list args)
-{
+int _strlen(char *str){
 	int r = va_arg(args, int);
 	int lastdigit = r % 10;
 	int exponent = 1;
