@@ -72,8 +72,8 @@ int print_string(va_list args, char buf[],
 			for (i = w - len; i > 0; i--)
 				write(1, " ", 1);
 			write(1, str, len);
+			return (w);
 		}
-		return (w);
 	}
 
 	return (write(1, str, len));
